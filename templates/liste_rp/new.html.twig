@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ListeRp{% endblock %}
+
+{% block body %}
+    <h1>Create new ListeRp</h1>
+
+    {{ include('liste_rp/_form.html.twig') }}
+
+    <a href="{{ path('app_liste_rp_index') }}">back to list</a>
+{% endblock %}

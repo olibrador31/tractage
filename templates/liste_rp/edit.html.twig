@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ListeRp{% endblock %}
+
+{% block body %}
+    <h1>Edit ListeRp</h1>
+
+    {{ include('liste_rp/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_liste_rp_index') }}">back to list</a>
+
+    {{ include('liste_rp/_delete_form.html.twig') }}
+{% endblock %}

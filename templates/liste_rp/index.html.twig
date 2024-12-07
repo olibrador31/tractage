@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ListeRp index{% endblock %}
+
+{% block body %}
+    <h1>ListeRp index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Entitee</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for liste_rp in liste_rps %}
+            <tr>
+                <td>{{ liste_rp.id }}</td>
+                <td>{{ liste_rp.nom }}</td>
+                <td>{{ liste_rp.prenom }}</td>
+                <td>{{ liste_rp.entitee }}</td>
+                <td>
+                    <a href="{{ path('app_liste_rp_show', {'id': liste_rp.id}) }}">show</a>
+                    <a href="{{ path('app_liste_rp_edit', {'id': liste_rp.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_liste_rp_new') }}">Create new</a>
+{% endblock %}
